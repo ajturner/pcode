@@ -1,0 +1,21 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  name: MyString
+  pcode: 1
+  geometry: 
+  country: MyString
+  region: MyString
+  city: MyString
+  user_id: 1
+  event_id: 1
+
+two:
+  name: MyString
+  pcode: 1
+  geometry: 
+  country: MyString
+  region: MyString
+  city: MyString
+  user_id: 1
+  event_id: 1

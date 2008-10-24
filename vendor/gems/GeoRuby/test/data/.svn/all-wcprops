@@ -1,0 +1,59 @@
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/svn/!svn/ver/162/trunk/vendor/gems/GeoRuby-1.2.3/test/data
+END
+polygon.shp
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svn/!svn/ver/162/trunk/vendor/gems/GeoRuby-1.2.3/test/data/polygon.shp
+END
+polygon.dbf
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svn/!svn/ver/162/trunk/vendor/gems/GeoRuby-1.2.3/test/data/polygon.dbf
+END
+point.shp
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svn/!svn/ver/162/trunk/vendor/gems/GeoRuby-1.2.3/test/data/point.shp
+END
+point.dbf
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svn/!svn/ver/162/trunk/vendor/gems/GeoRuby-1.2.3/test/data/point.dbf
+END
+polyline.shp
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svn/!svn/ver/162/trunk/vendor/gems/GeoRuby-1.2.3/test/data/polyline.shp
+END
+polyline.dbf
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svn/!svn/ver/162/trunk/vendor/gems/GeoRuby-1.2.3/test/data/polyline.dbf
+END
+polygon.shx
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svn/!svn/ver/162/trunk/vendor/gems/GeoRuby-1.2.3/test/data/polygon.shx
+END
+point.shx
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svn/!svn/ver/162/trunk/vendor/gems/GeoRuby-1.2.3/test/data/point.shx
+END
+polyline.shx
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svn/!svn/ver/162/trunk/vendor/gems/GeoRuby-1.2.3/test/data/polyline.shx
+END

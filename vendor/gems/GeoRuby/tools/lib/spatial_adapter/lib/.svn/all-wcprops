@@ -1,0 +1,23 @@
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/svn/!svn/ver/162/trunk/vendor/gems/GeoRuby-1.2.3/tools/lib/spatial_adapter/lib
+END
+mysql_spatial_adapter.rb
+K 25
+svn:wc:ra_dav:version-url
+V 104
+/svn/!svn/ver/162/trunk/vendor/gems/GeoRuby-1.2.3/tools/lib/spatial_adapter/lib/mysql_spatial_adapter.rb
+END
+common_spatial_adapter.rb
+K 25
+svn:wc:ra_dav:version-url
+V 105
+/svn/!svn/ver/162/trunk/vendor/gems/GeoRuby-1.2.3/tools/lib/spatial_adapter/lib/common_spatial_adapter.rb
+END
+post_gis_adapter.rb
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/svn/!svn/ver/162/trunk/vendor/gems/GeoRuby-1.2.3/tools/lib/spatial_adapter/lib/post_gis_adapter.rb
+END

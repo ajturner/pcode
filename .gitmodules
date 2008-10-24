@@ -1,0 +1,6 @@
+[submodule "vendor/plugins/spatial_adapter"]
+	path = vendor/plugins/spatial_adapter
+	url = git://github.com/pdeffendol/spatial_adapter.git
+[submodule "ym4r_mapstraction"]
+	path = ym4r_mapstraction
+	url = git://github.com/nofxx/ym4r_mapstraction.git

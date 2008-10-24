@@ -1,0 +1,17 @@
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svn/!svn/ver/162/trunk/vendor/gems/GeoRuby-1.2.3/tools/lib/spatial_adapter/test/schema
+END
+schema_mysql.rb
+K 25
+svn:wc:ra_dav:version-url
+V 103
+/svn/!svn/ver/162/trunk/vendor/gems/GeoRuby-1.2.3/tools/lib/spatial_adapter/test/schema/schema_mysql.rb
+END
+schema_postgis.rb
+K 25
+svn:wc:ra_dav:version-url
+V 105
+/svn/!svn/ver/162/trunk/vendor/gems/GeoRuby-1.2.3/tools/lib/spatial_adapter/test/schema/schema_postgis.rb
+END

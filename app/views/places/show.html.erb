@@ -1,0 +1,41 @@
+<div id="map"></div>
+<script type="text/javascript" charset="utf-8">
+	function loadMap() {
+		var featurecollection = <%= @place.geometry.to_json %>;
+		var geojson_format = new OpenLayers.Format.GeoJSON();
+		var vector_layer = new OpenLayers.Layer.Vector(); 
+		map.addLayer(vector_layer);
+		vector_layer.addFeatures(geojson_format.read(featurecollection));
+	}
+</script>
+<p>
+  <b>Name:</b>
+  <%=h @place.name %>
+</p>
+
+<p>
+  <b>Pcode:</b>
+  <%=h @place.pcode %>
+</p>
+
+<!-- <%=h @place.geometry %>  -->
+
+<p>
+  <b>Country:</b>
+  <%=h @place.country %>
+</p>
+
+<p>
+  <b>Region:</b>
+  <%=h @place.region %>
+</p>
+
+<p>
+  <b>City:</b>
+  <%=h @place.city %>
+</p>
+
+
+
+<%= link_to 'Edit', edit_place_path(@place) %> |
+<%= link_to 'Back', places_path %>

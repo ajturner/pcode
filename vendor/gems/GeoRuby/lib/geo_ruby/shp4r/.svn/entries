@@ -1,0 +1,52 @@
+8
+
+dir
+693
+http://dev.mapufacture.com/svn/trunk/vendor/gems/GeoRuby-1.2.3/lib/geo_ruby/shp4r
+http://dev.mapufacture.com/svn
+
+
+
+2007-05-04T17:12:30.531755Z
+162
+mikel
+
+
+svn:special svn:externals svn:needs-lock
+
+
+
+
+
+
+
+
+
+
+
+65e4aab6-cd12-0410-a7e6-d05e425d738c
+
+shp.rb
+file
+
+
+
+
+2007-05-04T22:57:31.000000Z
+4296bc7fe8b25cd8ad1718556521f8d6
+2007-05-04T17:12:30.531755Z
+162
+mikel
+
+dbf.rb
+file
+
+
+
+
+2007-05-04T22:57:31.000000Z
+cdf9c5a43cdd5c8f981cf3e0cf5e9b22
+2007-05-04T17:12:30.531755Z
+162
+mikel
+

@@ -1,0 +1,117 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+       "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <meta http-equiv="content-type" content="text/html;charset=UTF-8" />
+  <title>Places: <%= controller.action_name %></title>
+
+	<script src="http://openlayers.org/api/2.6/OpenLayers.js"></script>
+    <style type="text/css">
+        #attributes {
+            float:right; 
+            top: 70px;
+            width: 35%;
+        }
+        #attr_list input {
+            width:45%;
+        }    
+        #map {
+            width: 400px;
+            height: 300px;
+            border: 1px solid gray;
+        }
+    </style>
+
+  <%= stylesheet_link_tag 'scaffold' %>
+<script type="text/javascript" charset="utf-8">
+		var map, drawControls, geojson, lastFeature, wfs, vectors, featureid;
+        var fs_path = '';
+
+       function init(){
+            map = new OpenLayers.Map('map', {maxResolution: 360/512,  controls: []});
+            var wms = new OpenLayers.Layer.WMS( "OpenLayers WMS", 
+                "http://labs.metacarta.com/wms-c/Basic.py", {'layers':'basic'}); 
+            var wms2 = new OpenLayers.Layer.WMS( "OpenLayers WMS", 
+                "http://labs.metacarta.com/wms-c/Basic.py", {'layers':'satellite'}); 
+            
+            vectors = new OpenLayers.Layer.Vector("Vector Layer", {displayInLayerSwitcher: false});
+
+            map.addLayers([wms, wms2, vectors]);
+            map.addControl(new OpenLayers.Control.Navigation());
+            map.addControl(new OpenLayers.Control.PanZoomBar());
+            map.addControl(new OpenLayers.Control.MousePosition());
+            map.addControl(new OpenLayers.Control.Permalink());
+            map.addControl(new OpenLayers.Control.LayerSwitcher());
+            
+            geojson = new OpenLayers.Format.GeoJSON();
+            
+            map.zoomToMaxExtent();
+            vectors.onFeatureInsert = function(feature) {
+                lastFeature = feature;
+                updateFeature();
+                var json = geojson.write(feature.layer.features);
+                json = json.replace(/,/g, ', ');
+                // document.getElementById('info').innerHTML = json;
+            }
+            featureid = 1;
+			
+			// edit
+			if(<%= params[:action] =~ /edit|new/ ? "true" : "false" %>) { 
+            	map.addControl(new OpenLayers.Control.EditingToolbar(vectors)); 				
+			} else {
+				loadMap();
+			}
+			
+        }
+
+        function updateFeature() {
+            if (!lastFeature) { 
+                alert("Sorry, no feature to modify.");
+                return;
+            }
+            if ($("place_name").value) {
+                lastFeature.attributes['name'] = $("place_name").value;
+                featureid++;
+            }
+            var json = geojson.write(lastFeature.layer.features);
+            json = json.replace(/,/g, ', ');
+			// debug 
+            // document.getElementById('info').innerHTML = json;
+        }    
+        function success() { 
+            $('info').innerHTML = "Features uploaded to server."; 
+            vectors.destroyFeatures();
+        }        
+        function upload() {
+            url = "/places.json";
+
+            var json = geojson.write(vectors.features);
+            new OpenLayers.Ajax.Request(url, 
+                     {   method: 'post', 
+                         postBody: json,
+                         requestHeaders: ['Accept', 'application/json', 'Content-Type', 'application/json'],
+                         onSuccess: success,
+                         onFailure: function(xhr) {
+                           $('info').innerHTML = "Failed upload (status code "+xhr.status+"). Check your URL."
+                         }
+                      }
+                     );
+        }
+        OpenLayers.Tile.WFS.prototype.loadFeaturesForRegion = function(success, failure) { OpenLayers.loadURL(this.url+"&random="+Math.random(), null, this, success); }
+        OpenLayers.Feature.Vector.style['default'].strokeWidth=3;
+
+
+        // -->
+    </script>
+  </head>
+<body onload="init()">
+	
+<body>
+
+<p style="color: green"><%= flash[:notice] %></p>
+
+<%= yield  %>
+
+</body>
+</html>
