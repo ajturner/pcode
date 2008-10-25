@@ -1,34 +1,0 @@
-8
-
-dir
-693
-http://dev.mapufacture.com/svn/trunk/vendor/gems/GeoRuby-1.2.3/lib/geo_ruby
-http://dev.mapufacture.com/svn
-
-
-
-2008-03-02T20:29:04.160528Z
-570
-andrew
-
-
-svn:special svn:externals svn:needs-lock
-
-
-
-
-
-
-
-
-
-
-
-65e4aab6-cd12-0410-a7e6-d05e425d738c
-
-shp4r
-dir
-
-simple_features
-dir
-

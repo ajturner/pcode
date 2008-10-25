@@ -22,9 +22,9 @@ Rails::Initializer.run do |config|
 
   # Specify gems that this application depends on. 
   # They can then be installed with "rake gems:install" on new installations.
-  config.gem "json"
   # config.gem "hpricot", :version => '0.6', :source => "http://code.whytheluckystiff.net"
   # config.gem "aws-s3", :lib => "aws/s3"
+config.gem "capistrano-ext", :lib => "capistrano"
 
   # Only load the plugins named here, in the order given. By default, all plugins 
   # in vendor/plugins are loaded in alphabetical order.
@@ -36,6 +36,7 @@ Rails::Initializer.run do |config|
   config.load_paths += Dir["#{RAILS_ROOT}/vendor/gems/**"].map do |dir| 
     File.directory?(lib = "#{dir}/lib") ? lib : dir
   end
+
 
   # Force all environments to use the same logger level
   # (by default production uses :info, the others :debug)
@@ -51,14 +52,14 @@ Rails::Initializer.run do |config|
   # Make sure the secret is at least 30 characters and all random, 
   # no regular words or you'll be exposed to dictionary attacks.
   config.action_controller.session = {
-    :session_key => '_pcode_session',
-    :secret      => '08b59f26f17f1db948974c4ed04ca1eb9aa56f58027bc2e0d2fb0faa553114fdfe67a540f4293587cab924fefd5951af293f5e5f30e405d92505923ef3865f54'
+    :session_key => '_bort_session',
+    :secret      => 'c9ba017060e99fd4e23621a963dfe5d05e7975c732e622924b4a9b86a6b6d60ca6c067429f937c06675480f3181fc39f0d5328a73b559c3879cc2d9bee662c9d'
   }
 
   # Use the database for sessions instead of the cookie-based default,
   # which shouldn't be used to store highly confidential information
   # (create the session table with "rake db:sessions:create")
-  # config.action_controller.session_store = :active_record_store
+  config.action_controller.session_store = :active_record_store
 
   # Use SQL instead of Active Record's schema dumper when creating the test database.
   # This is necessary if your schema can't be completely dumped by the schema dumper,
@@ -66,6 +67,5 @@ Rails::Initializer.run do |config|
   # config.active_record.schema_format = :sql
 
   # Activate observers that should always be running
-  # config.active_record.observers = :cacher, :garbage_collector
+  config.active_record.observers = :user_observer
 end
-require 'georuby_json'
