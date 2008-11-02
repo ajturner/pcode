@@ -67,7 +67,7 @@ ActiveRecord::Schema.define(:version => 20081021220938) do
     t.column "salt", :string, :limit => 40
     t.column "remember_token", :string, :limit => 40
     t.column "activation_code", :string, :limit => 40
-    t.column "state", :string, :default => "passive"
+    t.column "state", :string, :default => "passive", :null => false
     t.column "remember_token_expires_at", :timestamp
     t.column "activated_at", :timestamp
     t.column "deleted_at", :timestamp
